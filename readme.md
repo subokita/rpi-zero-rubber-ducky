@@ -3,25 +3,8 @@
 ## Installation
 
 ```
-wget https://raw.githubusercontent.com/lincolnthedev/rpi-zero-rubber-ducky/main/duckysetup.sh && chmod +x duckysetup.sh && sudo ./duckysetup.sh
+wget https://raw.githubusercontent.com/subokita/rpi-zero-rubber-ducky/main/duckysetup.sh && chmod +x duckysetup.sh && sudo ./duckysetup.sh
 ```
-
-## Introduction
-```
-   _      _      _         USB         _      _      _
-   __(.)< __(.)> __(.)=   Duck-    >(.)__ <(.)__ =(.)__
-   \___)  \___)  \___)    Berry!    (___/  (___/  (___/ 
-```
-
-The USB Rubber Ducky is a Human Interface Device programmable with a simple scripting language allowing penetration testers to quickly and easily craft and deploy security auditing payloads that mimic human keyboard input. Tools and payloads can be found at usbrubberducky.com. Quack!
-
-DuckBerry Pi is a Raspberry Pi distro. based on Minibian which allows the Raspberry Pi Zero to behave similar to a [USB Rubber Ducky](https://hakshop.com/products/usb-rubber-ducky-deluxe): a small device USB device which emulates a keyboard and automates key entry.
-Ducky scripts (uncompiled) which are made for the USB Rubber Ducky can be used with the Duckyberry Pi without modification. This can be useful for automating computer tasks, penetration testing machines, playing pranks, or just fun (by default plugging in an untouched Duckberry Pi image will open a Youtube video).
-Since it is recognised as a standard keyboard, this tool is compatible with Windows, Mac OS, Linux, Android, PlayStation 4, and anything that supports a USB keyboard.
-
-## Getting Started
-
-These instructions will help you setup and install your own Duckberry
 
 ### Installation
 
@@ -38,16 +21,16 @@ These instructions will help you setup and install your own Duckberry
     ``` bash
         chmod +x duckysetup.sh
     ```
-   
+
 5) Run the script
    ``` bash
        sudo ./duckysetup.sh
    ```
-   
+
 ### Using Duckberry
-   
+
 6) Turn off the PI, plug it into the target host machine via USB cable in the peripheral micro USB port, NOT THE POWER PORT.  A power cord is not required as the Pi Zero will take power directly from the host machine.
-    
+
 7) Watch the script execute on the host machine - You may have to plug it in twice, the first time installs drivers.
 
 8) Once the default script runs you can unplug and take the SD card out of the PI, plug it into any machine with a USB SD card adaptor and then change /boot/payload.dd file to any DuckyScript Payload. This is what file the Pi will inject into the target device.
@@ -65,7 +48,7 @@ Jeff L.
 Dee-oh-double-gee
 Theresalu
 Ossiozac
-       
+
 Credits to Original Authors:
 DroidDucky by Andrej Budincevic (https://github.com/anbud/DroidDucky)
 hardpass by girst (https://github.com/girst/hardpass)

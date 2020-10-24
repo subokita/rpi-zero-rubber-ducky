@@ -6,17 +6,17 @@ if [ $EUID -ne 0 ]; then
 fi
 apt-get update
 apt-get upgrade -y
-apt-get install rpi-update
+apt-get install git rpi-update
 BRANCH=next rpi-update c053625
 
 ## dwc2 drivers
 sed -i -e "\$adtoverlay=dwc2" /boot/config.txt
 
 ##Install git and download rspiducky
-wget --no-check-certificate https://raw.githubusercontent.com/lincolnthedev/Raspberry-Pi-Zero-Rubber-Ducky-Duckberry-Pi/main/LICENSE https://raw.githubusercontent.com/lincolnthedev/Raspberry-Pi-Zero-Rubber-Ducky-Duckberry-Pi/main/duckpi.sh https://github.com/lincolnthedev/Raspberry-Pi-Zero-Rubber-Ducky-Duckberry-Pi/raw/main/g_hid.ko https://github.com/lincolnthedev/Raspberry-Pi-Zero-Rubber-Ducky-Duckberry-Pi/raw/main/hid-gadget-test https://github.com/lincolnthedev/Raspberry-Pi-Zero-Rubber-Ducky-Duckberry-Pi/raw/main/hid-gadget-test.c https://github.com/lincolnthedev/Raspberry-Pi-Zero-Rubber-Ducky-Duckberry-Pi/raw/main/readme.md https://github.com/lincolnthedev/Raspberry-Pi-Zero-Rubber-Ducky-Duckberry-Pi/raw/main/usleep https://github.com/lincolnthedev/Raspberry-Pi-Zero-Rubber-Ducky-Duckberry-Pi/raw/main/usleep.c
+git clone https://github.com/subokita/rpi-zero-rubber-ducky.git
 
 ##Make all nessisary files executeable
-cd /home/pi
+cd /home/pi/rpi-zero-rubber-ducky
 chmod 755 hid-gadget-test.c duckpi.sh usleep.c g_hid.ko usleep hid-gadget-test
 
 \cp g_hid.ko /lib/modules/4.4.0+/kernel/drivers/usb/gadget/legacy
@@ -56,7 +56,7 @@ STRING Terminal
 DELAY 100
 ENTER
 DELAY 3000
-STRING osascript -e 'tell app "System Events" to display dialog "I have gotten into your computer! You are not safe!\n\nYou should be glad I am not evil!!" with icon caution'
+STRING osascript -e 'tell app "System Events" to display dialog "Rubber Ducky initial payload successful'
 DELAY 500
 ENTER
 DELAY 100
